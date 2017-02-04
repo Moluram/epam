@@ -17,14 +17,3 @@ public class CurrentTime {
     return sdf.format(cal.getTime());
   }
 }
-package igorhmm.currenttime;
-
-/**
- * Entry point to software to get current time,
- * No input parameters from CL are used
- */
-public class EntryPoint {
-  public static void main (String[] args) {
-    System.out.println("Current time is " + CurrentTime.getTime("HH:mm"));
-  }
-}
