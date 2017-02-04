@@ -11,6 +11,10 @@ public class CurrentTime {
    * @param  timeFormat Desirable format for current time output
    * @return current time
    */
+  public static void main (String[] args) {
+
+  }
+
   public static String getTime (String timeFormat) {
     Calendar cal = Calendar.getInstance();
     SimpleDateFormat sdf = new SimpleDateFormat(timeFormat);
