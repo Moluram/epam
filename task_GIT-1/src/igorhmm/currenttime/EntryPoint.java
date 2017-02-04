@@ -5,7 +5,7 @@ package igorhmm.currenttime;
  * No input parameters from CL are used
  */
 public class EntryPoint {
-	public static void main (String[] args) {
-		System.out.println("Current time is " + CurrentTime.getTime("HH:mm"));
-	}
+  public static void main (String[] args) {
+    System.out.println("Current time is " + CurrentTime.getTime("HH:mm"));
+  }
 }
