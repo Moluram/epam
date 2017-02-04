@@ -6,7 +6,6 @@ package igorhmm.currenttime;
  */
 public class EntryPoint {
   public static final TIME_FORMAT = "HH:mm";
-
   public static final STRING_CURRENT_TIME_IS = "Current time is ";
 
   /**
