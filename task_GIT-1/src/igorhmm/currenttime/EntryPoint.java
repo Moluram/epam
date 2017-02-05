@@ -12,6 +12,6 @@ public class EntryPoint {
    * Starts execution of the program
    */
   public static void main(String[] args) {
-    System.out.println(STRING_CURRENT_TIME_IS + CurrentTime.getTime());
+    System.out.println(STRING_CURRENT_TIME_IS + CurrentTime.getTime(TIME_FORMAT));
   }
 }
