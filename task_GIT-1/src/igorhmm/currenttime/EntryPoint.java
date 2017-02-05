@@ -5,8 +5,8 @@ package igorhmm.currenttime;
  * No input parameters from CL are used
  */
 public class EntryPoint {
-  public static final TIME_FORMAT = "HH:mm";
-  public static final STRING_CURRENT_TIME_IS = "Current time is ";
+  public static final String TIME_FORMAT = "HH:mm";
+  public static final String STRING_CURRENT_TIME_IS = "Current time is ";
 
   /**
    * Starts execution of the program
