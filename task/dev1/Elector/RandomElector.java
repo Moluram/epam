@@ -8,6 +8,10 @@ import java.util.Random;
  * Represent an elector which bases on a random type of election
  */
 public class RandomElector {
+  private static final String MESSAGE_NOT_ENOUGH_ITEMS_EXCEPTION = "Not enough items for election!";
+  private static final String MESSAGE_NEGATIVE_NUMBER_OF_ITEMS =
+      "Negative number of items to elect!";
+
   /**
    * Randomly elects items from an array
    * Return list of elected items
@@ -15,14 +19,14 @@ public class RandomElector {
    * @param numberOfItems - number of elements to elect
    * @return List - list of elected items
    * @throws IllegalArgumentException - whether the number of items is more than items in a list
-   * @throws NumberFormatException - whether the number of items to return is negative number
+   * or the number of items to return is negative number
    */
   public List elect(String[] listOfItems, int numberOfItems) {
     if (listOfItems.length < numberOfItems) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(MESSAGE_NOT_ENOUGH_ITEMS_EXCEPTION);
     }
     if (numberOfItems < 0) {
-      throw new NumberFormatException();
+      throw new IllegalArgumentException(MESSAGE_NEGATIVE_NUMBER_OF_ITEMS);
     }
     List<Object> newItemsList = new ArrayList<>();
     Random random = new Random();
