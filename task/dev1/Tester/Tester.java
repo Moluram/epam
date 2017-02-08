@@ -18,7 +18,7 @@ public class Tester<T> {
 
   /**
    * Execute RandomElector and ConsolePrinter
-   * @param testItems - items which sends to the elector
+   * @param testItems - items which sends to the exemplar of a RandomElector class
    */
   public void testElector(T[] testItems) {
     Elector elector = new RandomElector();

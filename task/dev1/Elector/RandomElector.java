@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Represent an elector which bases on random type of election
+ * Represent an elector which bases on a random type of election
  */
 public class RandomElector implements Elector {
   /**
    * Randomly elects items from a list
    * Return list of elected items
-   * @param listOfItems   - filter elements
+   * @param listOfItems   - elements to filter
    * @param numberOfItems - number of elements to elect
    * @return List - list of elected items
    * @throws NotEnoughItemsException - throws whether the items don't enough for the election
