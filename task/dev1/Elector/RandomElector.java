@@ -14,10 +14,12 @@ public class RandomElector {
    * @param listOfItems - elements to filter
    * @param numberOfItems - number of elements to elect
    * @return List - list of elected items
+   * @throws IllegalArgumentException - whether the number of items is more than items in a list
+   * @throws NumberFormatException - whether the number of items to return is negative number
    */
   public List elect(String[] listOfItems, int numberOfItems) {
     if (listOfItems.length < numberOfItems) {
-      throw new NegativeArraySizeException();
+      throw new IllegalArgumentException();
     }
     if (numberOfItems < 0) {
       throw new NumberFormatException();
