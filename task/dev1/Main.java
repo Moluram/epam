@@ -1,6 +1,6 @@
 package com.moluram.task.dev1;
 
-import com.moluram.task.dev1.Tester.Tester;
+import com.moluram.task.dev1.Helpers.Executor;
 
 /**
  * Class serves for starting execution of the program
@@ -11,7 +11,7 @@ public class Main {
    * @param args - command line arguments
    */
   public static void main(String[] args) {
-    Tester tester = new Tester();
-    tester.testElector(args);
+    Executor tester = new Executor();
+    tester.executeElector(args);
   }
 }
