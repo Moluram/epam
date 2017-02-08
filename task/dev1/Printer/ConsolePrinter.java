@@ -8,7 +8,6 @@ import java.util.List;
 public class ConsolePrinter implements Printer {
   /**
    * Prints items to the console
-   *
    * @param list - list of printed items
    */
   @Override
@@ -23,7 +22,6 @@ public class ConsolePrinter implements Printer {
 
   /**
    * Prints item to the console
-   *
    * @param object - printed item
    */
   @Override

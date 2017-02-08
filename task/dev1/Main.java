@@ -8,7 +8,6 @@ import com.moluram.task.dev1.Tester.Tester;
 public class Main {
   /**
    * Starts execution of the tester
-   *
    * @param args - command line arguments
    */
   public static void main(String[] args) {

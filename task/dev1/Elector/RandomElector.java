@@ -11,7 +11,6 @@ public class RandomElector implements Elector {
   /**
    * Randomly elects items from a list
    * Return list of elected items
-   *
    * @param listOfItems   - filter elements
    * @param numberOfItems - number of elements to elect
    * @return List - list of elected items

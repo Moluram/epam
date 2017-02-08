@@ -18,7 +18,6 @@ public class Tester<T> {
 
   /**
    * Execute RandomElector and ConsolePrinter
-   *
    * @param testItems - items which sends to the elector
    */
   public void testElector(T[] testItems) {
