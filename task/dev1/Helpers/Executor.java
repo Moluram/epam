@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class Executor {
   private static final int NUMBER_OF_ITEMS_TO_ELECT = 3;
-
   private static final String MESSAGE_NOT_ENOUGH_ITEMS_EXCEPTION = "Not enough items for election!";
   private static final String MESSAGE_NEGATIVE_NUMBER_OF_ITEMS =
       "Negative number of items to elect!";
