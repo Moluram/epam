@@ -24,9 +24,9 @@ public class Executor {
       for (Object object : elector.elect(testItems, NUMBER_OF_ITEMS_TO_ELECT)) {
         System.out.println(object);
       }
-    } catch (RandomElector.NotEnoughItemsException e) {
+    } catch (NegativeArraySizeException e) {
       System.out.println(MESSAGE_NOT_ENOUGH_ITEMS_EXCEPTION);
-    } catch (RandomElector.NegativeNumberOfItemsException e) {
+    } catch (NumberFormatException e) {
       System.out.println(MESSAGE_NEGATIVE_NUMBER_OF_ITEMS);
     }
   }

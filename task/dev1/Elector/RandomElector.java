@@ -14,15 +14,13 @@ public class RandomElector {
    * @param listOfItems - elements to filter
    * @param numberOfItems - number of elements to elect
    * @return List - list of elected items
-   * @throws NotEnoughItemsException - throws whether the items don't enough for the election
    */
-  public List elect(String[] listOfItems, int numberOfItems)
-      throws NotEnoughItemsException, NegativeNumberOfItemsException {
+  public List elect(String[] listOfItems, int numberOfItems) {
     if (listOfItems.length < numberOfItems) {
-      throw new NotEnoughItemsException();
+      throw new NegativeArraySizeException();
     }
     if (numberOfItems < 0) {
-      throw new NegativeNumberOfItemsException();
+      throw new NumberFormatException();
     }
     List<Object> newItemsList = new ArrayList<>();
     Random random = new Random();
@@ -32,14 +30,4 @@ public class RandomElector {
     }
     return newItemsList;
   }
-
-  /**
-   * Represents an exception for a case where items don't enough for election
-   */
-  public class NotEnoughItemsException extends Exception { }
-
-  /**
-   * Represents an exception for a case where number of items to elect is negative
-   */
-  public class NegativeNumberOfItemsException extends Exception { }
 }
