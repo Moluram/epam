@@ -6,7 +6,6 @@ package com.moluram.task.dev1.Options;
 public class SingleMinusOption implements Option {
   private static final String SINGLE_MINUS = "-";
   private static final int NUMBER_OF_LETTERS_IN_SENTENCE = 2;
-  private static final int FIRST_LETTER = 0;
   private static final String EMPTY_STRING = "";
 
   /**
@@ -17,7 +16,7 @@ public class SingleMinusOption implements Option {
   @Override
   public boolean check(String value) {
     if(value.length() == NUMBER_OF_LETTERS_IN_SENTENCE) {
-      if (SINGLE_MINUS.charAt(FIRST_LETTER) == value.charAt(FIRST_LETTER)) {
+      if (value.startsWith(SINGLE_MINUS)) {
         return !value.replaceFirst(SINGLE_MINUS, EMPTY_STRING).contains(SINGLE_MINUS);
       }
     }

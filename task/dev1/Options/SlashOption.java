@@ -5,7 +5,6 @@ package com.moluram.task.dev1.Options;
  */
 public class SlashOption implements Option {
   private static final String SLASH = "/";
-  private static final int FIRST_LETTER = 0;
   private static final String EMPTY_STRING = "";
 
   /**
@@ -15,7 +14,7 @@ public class SlashOption implements Option {
    */
   @Override
   public boolean check(String value) {
-    if (SLASH.charAt(FIRST_LETTER) == value.charAt(FIRST_LETTER)) {
+    if (value.startsWith(SLASH)) {
       value = value.replaceFirst(SLASH, EMPTY_STRING);
       return !value.contains(SLASH);
     }
