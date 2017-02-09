@@ -19,6 +19,7 @@ public class ListRandomizer {
     for (int i = 0; i < tempItemsList.size(); i++) {
       int randomValue = random.nextInt(tempItemsList.size());
       newItemsList.add(tempItemsList.get(randomValue));
+      tempItemsList.remove(randomValue);
     }
     return newItemsList;
   }
