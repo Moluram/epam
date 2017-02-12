@@ -1,21 +1,19 @@
-package com.moluram.task.dev2.Tools.Parser;
+package com.moluram.task.dev2.Tools.ExpressionTools;
 
 import com.moluram.task.dev2.Tools.Operators.Operator;
-import com.moluram.task.dev2.Tools.ItemOperationSet;
-import com.moluram.task.dev2.Tools.Values.Number;
-import com.moluram.task.dev2.Tools.Values.Operation;
-import com.moluram.task.dev2.Tools.Values.Value;
+import com.moluram.task.dev2.Tools.ExpressionTools.Values.Number;
+import com.moluram.task.dev2.Tools.ExpressionTools.Values.Operation;
+import com.moluram.task.dev2.Tools.ExpressionTools.Values.Value;
 
 import java.math.BigDecimal;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by Moluram on 12.02.2017.
  */
-public class ExpressionParser {
+class ExpressionParser implements Parser {
   private static final String NUMBER_FORMAT_EXCEPTION_MESSAGE = "Wrong input: ";
   private static final char OPEN_BRACKET = '(';
   private static final char CLOSE_BRACKET = ')';
@@ -63,29 +61,12 @@ public class ExpressionParser {
   private List<BigDecimal> numbersList = new LinkedList<>();
 
   /**
-   * List of all numbers in an expression
-   */
-  private List<Value> values = new LinkedList<>();
-
-  /**
    * Represent the last operation in expression
    */
   private Value expression;
 
-  public List<ItemOperationSet> getItemOperationSets() {
-    return itemOperationSetList;
-  }
-
-  public List<BigDecimal> getNumberList() {
-    return numbersList;
-  }
-
-  public List<Value> getListOfValues() {
-    return values;
-  }
-
-  public Value getExpression() {
-    return expression;
+  public BigDecimal getExpressionAnswer() {
+    return expression.getValue();
   }
 
   /**
@@ -117,7 +98,6 @@ public class ExpressionParser {
       values.add(itemOperationSet.getNumber(), expression);
       values.add(itemOperationSet.getNumber(), expression);
     }
-    this.values = values;
   }
 
   /**

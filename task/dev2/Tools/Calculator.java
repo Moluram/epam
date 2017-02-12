@@ -1,8 +1,8 @@
 package com.moluram.task.dev2.Tools;
 
+import com.moluram.task.dev2.Tools.ExpressionTools.ExpressionWorker;
+import com.moluram.task.dev2.Tools.ExpressionTools.Parser;
 import com.moluram.task.dev2.Tools.Operators.Operator;
-import com.moluram.task.dev2.Tools.Parser.ExpressionParser;
-import com.moluram.task.dev2.Tools.Values.Value;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -14,7 +14,6 @@ public class Calculator {
   private static final String STRING_EMPTY = "";
   private static final String STRING_SPACE = " ";
   private static final String DEFAULT_VALUE_FOR_BIG_DECIMAL = "0";
-  private static final int ONE_TO_GET_NEXT_ELEMENT = 1;
 
   /**
    * Represent a list of support operations
@@ -39,7 +38,7 @@ public class Calculator {
     this.operatorList = operatorList;
   }
 
-  private ExpressionParser expressionParser;
+  private Parser expressionParser;
 
   /**
    * Sets expression and starts the parsing of an expression and solving of the expression
@@ -48,7 +47,7 @@ public class Calculator {
    */
   public void setExpression(String expression) throws NumberFormatException {
     this.expression = expression.replaceAll(STRING_SPACE, STRING_EMPTY);
-    expressionParser = new ExpressionParser(this.expression, operatorList);
+    expressionParser = new ExpressionWorker().getParser(this.expression, operatorList);
     solveExpression();
   }
 
@@ -64,6 +63,6 @@ public class Calculator {
    * Solves the expression
    */
   private void solveExpression() {
-    answer = expressionParser.getExpression().getValue();
+    answer = expressionParser.getExpressionAnswer();
   }
 }
