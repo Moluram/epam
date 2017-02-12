@@ -1,11 +1,11 @@
-package com.moluram.task.dev2.Operations;
+package com.moluram.task.dev2.Tools.Operators;
 
 import java.math.BigDecimal;
 
 /**
  * Represent a subtraction operation
  */
-public class SubtractionOperation implements Operation {
+public class SubtractionOperator implements Operator {
   private static final char OPERATOR = '-';
   private static final int METRIC_COEFFICIENT = 1;
 
@@ -31,7 +31,7 @@ public class SubtractionOperation implements Operation {
   }
 
   /**
-   * Coefficient of an operation for the metric
+   * Priority coefficient of an operation for the metric
    * @return long - coefficient
    */
   @Override

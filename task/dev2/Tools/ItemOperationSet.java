@@ -1,20 +1,20 @@
 package com.moluram.task.dev2.Tools;
 
-import com.moluram.task.dev2.Operations.Operation;
+import com.moluram.task.dev2.Tools.Operators.Operator;
 
 import java.util.Comparator;
 
 /**
  * Represent a work set for an Calculator
  */
-class ItemOperationSet {
+public class ItemOperationSet {
   /**
-   * Operation for an item
+   * Operator for an item
    */
-  private Operation operation;
+  private Operator operator;
 
   /**
-   * Position of a values for an operation in a list
+   * Position of a values for an operator in a list
    */
   private int number;
 
@@ -26,41 +26,39 @@ class ItemOperationSet {
   /**
    * Main constructor for a class ItemOperationSet
    * @param metric - Metric for sort sets in a list
-   * @param number - Position of a values for an operation in a list
-   * @param operation - Operation for an item
+   * @param number - Position of a values for an operator in a list
+   * @param operator - Operator for an item
    */
-  ItemOperationSet(long metric, int number, Operation operation) {
+  public ItemOperationSet(long metric, int number, Operator operator) {
     this.number = number;
-    this.operation = operation;
+    this.operator = operator;
     this.metric = metric;
   }
 
   /**
    * Comparator for a list to sort
    */
-  static class SortByMetric implements Comparator<ItemOperationSet>
-  {
+  public static class SortByMetric implements Comparator<ItemOperationSet>  {
     @Override
     public int compare(ItemOperationSet a, ItemOperationSet b)
     {
       return a.metric.compareTo(b.metric);
     }
-
   }
 
   /**
-   * Getter for an operation
-   * @return Operation
+   * Getter for an operator
+   * @return Operator
    */
-  Operation getOperation() {
-    return operation;
+  public Operator getOperator() {
+    return operator;
   }
 
   /**
    * Getter for a number
    * @return int
    */
-  int getNumber() {
+  public int getNumber() {
     return number;
   }
 }

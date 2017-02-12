@@ -1,6 +1,6 @@
 package com.moluram.task.dev2;
 
-import com.moluram.task.dev2.Operations.*;
+import com.moluram.task.dev2.Tools.Operators.*;
 import com.moluram.task.dev2.Tools.Calculator;
 
 import java.util.LinkedList;
@@ -20,15 +20,16 @@ public class Main {
    * @param args - arguments from a command line
    */
   public static void main(String[] args) {
-    String expression = getExpression(args);
-    executeCalculatorWithExpression(expression);
+    Main main = new Main();
+    String expression = main.getExpression(args);
+    main.executeCalculatorWithExpression(expression);
   }
 
   /**
    * Executes class calculator
    * @param expression - expression for the calculator
    */
-  public static void executeCalculatorWithExpression(String expression) {
+  public void executeCalculatorWithExpression(String expression) {
     System.out.println(expression);
     try {
       Calculator calculator = new Calculator(createListOfOperations());
@@ -41,15 +42,15 @@ public class Main {
 
   /**
    * Creates list of operations for calculator
-   * @return List<Operation> - list of operations
+   * @return List<Operator> - list of operations
    */
-  private static List<Operation> createListOfOperations() {
-    List<Operation> operations = new LinkedList<>();
-    operations.add(new AdditionOperation());
-    operations.add(new DivisionOperation());
-    operations.add(new MultiplicationOperation());
-    operations.add(new SubtractionOperation());
-    return operations;
+  private List<Operator> createListOfOperations() {
+    List<Operator> operators = new LinkedList<>();
+    operators.add(new AdditionOperator());
+    operators.add(new DivisionOperator());
+    operators.add(new MultiplicationOperator());
+    operators.add(new SubtractionOperator());
+    return operators;
   }
 
   /**
@@ -57,7 +58,7 @@ public class Main {
    * @param args - arguments from a command line
    * @return String - expression from output
    */
-  private static String getExpression(String[] args) {
+  private String getExpression(String[] args) {
     String expression = EMPTY_STRING;
     if (args.length == EMPTY_ARRAY) {
       Scanner scanner = new Scanner(System.in);

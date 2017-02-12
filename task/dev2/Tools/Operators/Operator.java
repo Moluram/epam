@@ -1,11 +1,11 @@
-package com.moluram.task.dev2.Operations;
+package com.moluram.task.dev2.Tools.Operators;
 
 import java.math.BigDecimal;
 
 /**
  * Represent a single mathematical operation
  */
-public interface Operation {
+public interface Operator {
   /**
    * Performs an action on two operands
    * @param operandA - first operand
@@ -22,7 +22,7 @@ public interface Operation {
   boolean isSupport(char c);
 
   /**
-   * Coefficient of an operation for the metric
+   * Priority coefficient of an operation for the metric
    * @return long - coefficient
    */
   long coefficient();

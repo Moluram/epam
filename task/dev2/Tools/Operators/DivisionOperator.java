@@ -1,13 +1,13 @@
-package com.moluram.task.dev2.Operations;
+package com.moluram.task.dev2.Tools.Operators;
 
 import java.math.BigDecimal;
 
 /**
- * Represent an addition operation
+ * Represent a division operation
  */
-public class AdditionOperation implements Operation {
-  private static final char OPERATOR = '+';
-  private static final int METRIC_COEFFICIENT = 1;
+public class DivisionOperator implements Operator {
+  private static final char OPERATOR = '/';
+  private static final int METRIC_COEFFICIENT = 2;
 
   /**
    * Performs an action on two operands
@@ -17,7 +17,7 @@ public class AdditionOperation implements Operation {
    */
   @Override
   public BigDecimal solve(BigDecimal operandA, BigDecimal operandB) {
-    return operandA.add(operandB);
+    return operandA.divide(operandB, operandA.scale(), BigDecimal.ROUND_HALF_UP);
   }
 
   /**
@@ -31,7 +31,7 @@ public class AdditionOperation implements Operation {
   }
 
   /**
-   * Coefficient of an operation for the metric
+   * Priority coefficient of an operation for the metric
    * @return long - coefficient
    */
   @Override
