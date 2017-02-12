@@ -6,7 +6,7 @@ import com.moluram.task.dev2.Tools.Operators.Operator;
 import java.util.List;
 
 /**
- * Created by Moluram on 12.02.2017.
+ * Serve for creating Parser objects
  */
 public class ExpressionWorker {
   public Parser getParser(String expression, List<Operator> operators) {

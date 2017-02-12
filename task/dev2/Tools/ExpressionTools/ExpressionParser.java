@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Moluram on 12.02.2017.
+ * Represent an implementation of calculator parser
  */
 class ExpressionParser implements Parser {
   private static final String NUMBER_FORMAT_EXCEPTION_MESSAGE = "Wrong input: ";

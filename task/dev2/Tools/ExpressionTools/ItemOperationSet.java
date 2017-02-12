@@ -7,7 +7,7 @@ import java.util.Comparator;
 /**
  * Represent a work set for an Calculator
  */
-public class ItemOperationSet {
+class ItemOperationSet {
   /**
    * Operator for an item
    */
