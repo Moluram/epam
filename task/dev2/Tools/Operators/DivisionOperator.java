@@ -8,6 +8,11 @@ import java.math.BigDecimal;
 public class DivisionOperator implements Operator {
   private static final char OPERATOR = '/';
   private static final int METRIC_COEFFICIENT = 2;
+  private final int accuracyOfCalculations;
+
+  public DivisionOperator(int accuracyOfCalculations) {
+    this.accuracyOfCalculations = accuracyOfCalculations;
+  }
 
   /**
    * Performs an action on two operands
@@ -17,7 +22,7 @@ public class DivisionOperator implements Operator {
    */
   @Override
   public BigDecimal solve(BigDecimal operandA, BigDecimal operandB) {
-    return operandA.divide(operandB, operandA.scale(), BigDecimal.ROUND_HALF_UP);
+    return operandA.divide(operandB, accuracyOfCalculations, BigDecimal.ROUND_HALF_UP);
   }
 
   /**

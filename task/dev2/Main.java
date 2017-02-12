@@ -14,6 +14,7 @@ public class Main {
   private static final String EMPTY_STRING = "";
   private static final int EMPTY_ARRAY = 0;
   private static final String AWAITING_INPUT_MESSAGE = "Awaiting input :";
+  private static final int ACCURACY_OF_CALCULATIONS = 250;
 
   /**
    * Executes the class Executor
@@ -47,7 +48,7 @@ public class Main {
   private List<Operator> createListOfOperations() {
     List<Operator> operators = new LinkedList<>();
     operators.add(new AdditionOperator());
-    operators.add(new DivisionOperator());
+    operators.add(new DivisionOperator(ACCURACY_OF_CALCULATIONS));
     operators.add(new MultiplicationOperator());
     operators.add(new SubtractionOperator());
     return operators;
