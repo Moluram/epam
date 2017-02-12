@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  */
 public class DivisionOperation implements Operation {
   private static final char OPERATOR = '/';
-  private static final char METRIC_COEFFICIENT = 2;
+  private static final int METRIC_COEFFICIENT = 2;
 
   /**
    * Performs an action on two operands

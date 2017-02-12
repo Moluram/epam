@@ -1,8 +1,10 @@
 package com.moluram.task.dev2;
 
-import com.moluram.task.dev2.Helpers.Executor;
+import com.moluram.task.dev2.Operations.*;
 import com.moluram.task.dev2.Tools.Calculator;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -19,8 +21,35 @@ public class Main {
    */
   public static void main(String[] args) {
     String expression = getExpression(args);
-    Executor executor = new Executor();
-    executor.executeCalculatorWithExpression(expression);
+    executeCalculatorWithExpression(expression);
+  }
+
+  /**
+   * Executes class calculator
+   * @param expression - expression for the calculator
+   */
+  public static void executeCalculatorWithExpression(String expression) {
+    System.out.println(expression);
+    try {
+      Calculator calculator = new Calculator(createListOfOperations());
+      calculator.setExpression(expression);
+      System.out.println(calculator.getAnswerToAnExpression());
+    } catch (NumberFormatException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  /**
+   * Creates list of operations for calculator
+   * @return List<Operation> - list of operations
+   */
+  private static List<Operation> createListOfOperations() {
+    List<Operation> operations = new LinkedList<>();
+    operations.add(new AdditionOperation());
+    operations.add(new DivisionOperation());
+    operations.add(new MultiplicationOperation());
+    operations.add(new SubtractionOperation());
+    return operations;
   }
 
   /**

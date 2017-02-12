@@ -18,8 +18,8 @@ public class Calculator {
   private static final char LOWERCASE_E = 'e';
   private static final char UPPERCASE_E = 'E';
   private static final int MAGNIFICATION_OF_A_METRIC_COEFFICIENT = 4;
-  private static final int ONE_TO_GET_NEXT_ELEMENT = 1;
   private static final int ZERO_FOR_THE_START = 0;
+  private static final int ONE_TO_GET_NEXT_ELEMENT = 1;
   private static final int ONE_TO_GET_PREVIOUS_ELEMENT = 1;
   private static final long DEFAULT_METRIC_COEFFICIENT_FOR_VALUES_WITHOUT_BRACKETS = 1;
 
@@ -50,8 +50,7 @@ public class Calculator {
 
   /**
    * Main constructor for a calculator
-   * @param operationList - list of suppor operations
-   * @throws NumberFormatException
+   * @param operationList - list of support operations
    */
   public Calculator(List<Operation> operationList) {
     this.operationList = operationList;
