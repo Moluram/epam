@@ -1,7 +1,14 @@
 package com.moluram.task.dev1.Helpers;
 
 import com.moluram.task.dev1.Elector.RandomElector;
+import com.moluram.task.dev1.Options.Option;
+import com.moluram.task.dev1.Options.SingleMinusOption;
+import com.moluram.task.dev1.Options.SlashOption;
+import com.moluram.task.dev1.Options.TwoMinusOption;
+import com.moluram.task.dev1.Platforms.Platform;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,24 +16,41 @@ import java.util.List;
  */
 public class Executor {
   private static final int NUMBER_OF_ITEMS_TO_ELECT = 3;
-  private static final String MESSAGE_NOT_ENOUGH_ITEMS_EXCEPTION = "Not enough items for election!";
-  private static final String MESSAGE_NEGATIVE_NUMBER_OF_ITEMS =
-      "Negative number of items to elect!";
 
   /**
    * Execute RandomElector
+   *
    * @param testItems - items which sends to the exemplar of a RandomElector class
    */
   public void executeElector(String[] testItems) {
-    RandomElector elector = new RandomElector();
+    Arrays.asList(testItems);
+    RandomElector elector = new RandomElector(createLinuxPlatform());
     try {
-      for (Object object : elector.elect(testItems, NUMBER_OF_ITEMS_TO_ELECT)) {
+      for (Object object : elector
+          .elect(testItems, NUMBER_OF_ITEMS_TO_ELECT)) {
         System.out.println(object);
       }
-    } catch (NegativeArraySizeException e) {
-      System.out.println(MESSAGE_NOT_ENOUGH_ITEMS_EXCEPTION);
-    } catch (NumberFormatException e) {
-      System.out.println(MESSAGE_NEGATIVE_NUMBER_OF_ITEMS);
+    } catch (IllegalArgumentException e) {
+      System.out.println(e.getMessage());
     }
+  }
+
+  /**
+   * Create a linux target platform
+   * @return Platform - linux target platform
+   */
+  private Platform createLinuxPlatform() {
+    return new Platform(createListOfOptionsForLinux());
+  }
+
+  /**
+   * Create a list of options for a linux
+   * @return List<Option> - list of options for a linux
+   */
+  private List<Option> createListOfOptionsForLinux() {
+    List<Option> optionList = new ArrayList<>();
+    optionList.add(new SingleMinusOption());
+    optionList.add(new TwoMinusOption());
+    return optionList;
   }
 }
